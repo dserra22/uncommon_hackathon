@@ -5,12 +5,16 @@ import { store } from "../functionality/store/Store";
 import { Provider } from "react-redux";
 import Head from "next/head";
 import Nav from "@/components/Navbar/Nav";
+import PopupToast from "@/components/PopupToast/PopupToast";
+import Modal from "@/components/Modal/Modal";
 
 export default function App({ Component, pageProps }: AppProps) {
   const main = (
     // @ts-ignore
     <Background>
       <Component {...pageProps} />
+      <PopupToast />
+      <Modal />
     </Background>
   );
 

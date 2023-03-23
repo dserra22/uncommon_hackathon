@@ -6,6 +6,8 @@ import {
   Action,
 } from "@reduxjs/toolkit";
 import userReducer from "./UserAuth";
+import toastReducer from "./Toast";
+import modalReducer from "./Modal";
 import thunk from "redux-thunk";
 
 // import logger from "redux-logger";
@@ -15,7 +17,9 @@ const rootReducer = combineReducers({ userReducer });
 export const store = configureStore({
   // @ts-ignore
   reducer: {
-    userReducer,
+    rootReducer,
+    toastReducer,
+    modalReducer,
   },
   middleware: (getDefaultMiddleware: any) =>
     getDefaultMiddleware({
