@@ -6,7 +6,7 @@ const multipleID = ["20394", "23409", "23489"];
 
 const Index = () => {
   return (
-    <Section>
+    <section>
       Main
       {multipleID.map((anID: string, i: number) => {
         return (
@@ -15,7 +15,7 @@ const Index = () => {
           </Link>
         );
       })}
-    </Section>
+    </section>
   );
 };
 
