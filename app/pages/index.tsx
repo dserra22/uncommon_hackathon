@@ -12,6 +12,8 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const executeRandomFunction = () => {};
+
 export default function Home() {
   const dispatch = useDispatch();
 
