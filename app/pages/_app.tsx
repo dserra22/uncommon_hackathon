@@ -7,6 +7,7 @@ import Head from "next/head";
 import Nav from "@/components/Navbar/Nav";
 import PopupToast from "@/components/PopupToast/PopupToast";
 import Modal from "@/components/Modal/Modal";
+import Footer from "@/components/Footer/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const main = (
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Nav />
       {main}
+      <Footer />
     </Provider>
   );
 }

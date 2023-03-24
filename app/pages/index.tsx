@@ -9,17 +9,16 @@ import { setTriggerToast } from "@/functionality/store/Toast";
 
 import { LinkText, Section, Title } from "./reusable.style";
 import Link from "next/link";
+import { title } from "@/functionality/data/data";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const executeRandomFunction = () => {};
 
 export default function Home() {
   const dispatch = useDispatch();
 
   return (
     <Section>
-      <Title>Hello from home page</Title>
+      <Title>Hello from home page {title}</Title>
       <button
         style={{
           fontSize: "3.2rem",

@@ -1,27 +1,46 @@
+import { title } from "@/functionality/data/data";
+import { FC, useState, useEffect } from "react";
 import Link from "next/link";
 import { NavBar, HomePage, Navigation, LinkItem, LinkText } from "./Nav.styles";
-
-const page = ["topic", "two", "three"];
+import NavigationComponent from "./Navigation";
 
 const Nav = () => {
+  const [isMobile, changeMobile] = useState(false);
+  const [navigationState, openNavigation] = useState(false);
+
+  useEffect(() => {
+    let q1 = window.matchMedia("(max-width: 54em)");
+    changeMobile(q1.matches);
+
+    q1.onchange = () => {
+      changeMobile(q1.matches);
+      openNavigation(false);
+    };
+  });
+
   return (
     <NavBar>
       <HomePage>
         <Link href="/">
-          <LinkText>Home</LinkText>
+          <LinkText>{title}</LinkText>
         </Link>
       </HomePage>
-      <Navigation>
-        {page.map((link: string, i: number) => {
-          return (
-            <LinkItem key={i}>
-              <Link href={"/" + link}>
-                <LinkText>{link}</LinkText>
-              </Link>
-            </LinkItem>
-          );
-        })}
-      </Navigation>
+      {isMobile && (
+        <button
+          onClick={() => {
+            openNavigation((prevState: boolean) => !prevState);
+          }}
+        >
+          Open Navigation
+        </button>
+      )}
+
+      <NavigationComponent
+        navigationState={!isMobile ? true : navigationState}
+        openNavigation={openNavigation}
+        isNavBar={true}
+        isMobile={isMobile}
+      />
     </NavBar>
   );
 };

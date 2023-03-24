@@ -6,6 +6,8 @@ export const Section = styled.section`
   background-color: green;
   color: white;
   font-size: 2.4rem;
+  padding: 9.8rem 0;
+  height: 200vh;
 `;
 
 export const Title = styled.h1`
