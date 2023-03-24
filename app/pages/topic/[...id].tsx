@@ -12,7 +12,20 @@ const ID = () => {
   //    using this id, that is given from the route
   // we can query a specific row ID
 
-  return <section>a post {id}</section>;
+  return (
+    <section>
+      <Link href="/topic" style={{ fontSize: "3.2rem" }}>
+        Back
+      </Link>
+      <p
+        style={{
+          fontSize: "3.2rem",
+        }}
+      >
+        a post {id}
+      </p>
+    </section>
+  );
 };
 
 export default ID;

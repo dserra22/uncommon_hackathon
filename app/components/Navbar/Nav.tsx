@@ -15,7 +15,7 @@ const Nav = () => {
         {page.map((link: string, i: number) => {
           return (
             <LinkItem key={i}>
-              <Link href={link}>
+              <Link href={"/" + link}>
                 <LinkText>{link}</LinkText>
               </Link>
             </LinkItem>
